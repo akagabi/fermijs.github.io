@@ -1,0 +1,139 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+	font-family: 'Oswald', sans-serif;
+	line-height: 1;
+}
+
+.main {
+	background: linear-gradient(to bottom, #ff00cc, #333399); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	height: 100vh;
+	position: relative;
+}
+
+.container {
+	box-shadow: 0 10px 10px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	left: 50%;
+	height: 700px;
+	max-width: 1132px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	transform: translate(-50%, -50%);
+	width: 100%;
+}
+
+.container:hover {
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.image-wrapper::after,
+.image-wrapper::before {
+	background: linear-gradient(to bottom, #ff00cc, #333399); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	opacity: .75;
+	position: absolute;
+	transform: rotate(-50deg);
+	z-index: 1;
+}
+
+.image-wrapper::before {
+	left: -25%;
+	height: 300px;
+	top: 100%;
+	width: 200%;
+}
+
+.image-wrapper::after {
+	height: 400px;
+	left: -36%;
+	top: 0;
+	width: 76%;
+}
+
+.image {
+	left: 50%;
+	min-height: 100%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%) scaleX(-1);
+	width: 100%;
+}
+
+.content {
+	bottom: 30px;
+	left: 0;
+	position: absolute;
+	z-index: 2;
+}
+
+.title {
+	color: #fff;
+	font-size: 128px;
+	font-weight: bold;
+	letter-spacing: 10px;
+	padding-left: 30px;
+	text-transform: uppercase;
+}
+
+.description {
+	background-color: #000;
+	color: #fff;
+	font-size: 24px;
+	letter-spacing: 2px;
+	line-height: 1.25;
+	max-width: 450px;
+	padding: 10px 30px 10px 40px;
+}
+
+@media (min-width: 1132px) {
+	.image-wrapper::after,
+	.image-wrapper::before {
+		content: '';
+	}
+}
+
+@media (max-width: 1132px) {
+	.container {
+		height: 100vh;
+	}
+
+	.image {
+		left: 0;
+		min-height: 0;
+		transform: translateY(-50%) scaleX(-1);
+		width: 100%;
+	}
+
+	.content {
+		max-width: 100%;
+	}
+
+	.title {
+		font-size: 80px;
+	}
+}
